@@ -15,8 +15,12 @@
             --glitch-mag: #ff00ff;
         }
 
-        body {
-            background-color: var(--dark-void);
+     body {
+            /* 使用你刚生成的这张图 */
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* 黑色遮罩层，让文字更清晰 */
+                url('assets/cover.jpg') no-repeat center center fixed; 
+            background-size: cover;
             color: var(--terminal-green);
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
@@ -24,18 +28,15 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
-            /* Retro CRT monitor effect */
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            background-size: 100% 2px, 3px 100%;
         }
-
+        
         .container {
             text-align: center;
-            border: 1px solid var(--terminal-green);
+            border: 1px solid rgba(0, 255, 65, 0.3); /* 边框调淡一点，更有通透感 */
             padding: 50px;
-            background: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+            background: rgba(5, 5, 5, 0.85); /* 深色半透明背景 */
+            backdrop-filter: blur(5px); /* 毛玻璃效果，非常高级 */
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
             max-width: 700px;
             position: relative;
         }
