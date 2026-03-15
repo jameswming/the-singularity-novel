@@ -92,6 +92,39 @@
             color: #8b949e;
         }
 
+          .list-container {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+                    }
+
+        .entry {
+            display: block;
+            text-decoration: none;
+            color: var(--neon-green);
+            padding: 12px 10px;
+            border-bottom: 1px solid rgba(0, 255, 65, 0.05);
+            transition: 0.1s;
+        }
+
+        /* 鼠标悬停的高亮效果：模拟终端选择 */
+        .entry:hover {
+            background: var(--neon-green);
+            color: var(--bg-black);
+            font-weight: bold;
+        }
+
+        .entry.locked {
+            opacity: 0.2;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .meta {
+            font-size: 0.7rem;
+            margin-right: 15px;
+            opacity: 0.7;
+        }
         .btn {
             display: inline-block;
             margin-top: 30px;
@@ -136,17 +169,34 @@
         >> DATA: A bilingual sci-fi odyssey in a post-computational world.
     </div>
 
-   <ul>
-        <li class="archive-item" style="opacity: 0.3;">
-             <a href="en/chapter-1.html" class="btn">INITIALIZE: CHAPTER 01</a>
-        </li>
-        <li class="archive-item" style="opacity: 0.3;">
-            <a href="#" class="btn" >
-                <span>> CHAPTER_02: THE NULL AUTHORITY</span>
-                <span>[LOCKED]</span>
-            </a>
-        </li>
-    </ul>
+    <nav class="list-container">
+        <a href="chapter-1.html" class="entry"><span class="meta">LOG_01</span>> RUINS OF DOUBLE VISION [DECRYPTED]</a>
+        <a href="chapter-2.html" class="entry"><span class="meta">LOG_02</span>> THE FUEL CALLED "RAIN" IS ASH [DECRYPTED]</a>
+
+        <div class="entry locked"><span class="meta">LOG_03</span>> THE BINARY GHOSTS [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_04</span>> NEON ENTROPY [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_05</span>> MEMORY LEAK [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_06</span>> SILICON TEARS [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_07</span>> THE ZERO BUREAU [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_08</span>> PROTOCOL BREACH [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_09</span>> COGNITIVE DUST [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_10</span>> GHOST IN THE CIRCUIT [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_11</span>> THE VOID ARCHIVE [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_12</span>> FRACTAL HEART [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_13</span>> BEYOND THE EVENT HORIZON [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_14</span>> SYNAPTIC OVERLOAD [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_15</span>> THE LAST UPLOAD [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_16</span>> DIGITAL PURGATORY [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_17</span>> ALGORITHM OF FATE [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_18</span>> NOISE OF THE SOUL [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_19</span>> COLD REBOOT [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_20</span>> THE ARCHITECT'S DREAM [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_21</span>> QUANTUM SHADOWS [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_22</span>> ECHOES OF EARTH [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_23</span>> THE SINGULARITY POINT [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_24</span>> TERMINATION SCRIPT [ENCRYPTED]</div>
+        <div class="entry locked"><span class="meta">LOG_25</span>> OMEGA: THE NEW GENESIS [ENCRYPTED]</div>
+    </nav>
     <div class="footer-info">SECURED BY THE CIPHER BUREAU // © 2026 DAVID KELLER ARCHIVE</div>
 </div>
 
