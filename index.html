@@ -4,141 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE SINGULARITY | Binary Dystopia Interactive Archive</title>
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-
     <style>
         :root {
-            --terminal-green: #00ff41;
-            --dark-void: #050505;
-            --glitch-cyan: #00ffff;
-            --glitch-mag: #ff00ff;
+            --neon-green: #00ff41;
+            --bg-dark: #050505;
         }
 
-     body {
-            /* 使用你刚生成的这张图 */
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* 黑色遮罩层，让文字更清晰 */
-                url('assets/Cover.jpg') no-repeat center center fixed; 
-            background-size: cover;
-            color: var(--terminal-green);
-            font-family: 'Courier New', Courier, monospace;
+        body {
             margin: 0;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('cover.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--neon-green);
+            font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            overflow: hidden;
         }
-        
-        .container {
+
+        .terminal-window {
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid var(--neon-green);
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 40px rgba(0, 255, 65, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .glitch {
+            font-size: 2rem;
             text-align: center;
-            border: 1px solid rgba(0, 255, 65, 0.3); /* 边框调淡一点，更有通透感 */
-            padding: 50px;
-            background: rgba(5, 5, 5, 0.85); /* 深色半透明背景 */
-            backdrop-filter: blur(5px); /* 毛玻璃效果，非常高级 */
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-            max-width: 700px;
-            position: relative;
-        }
-
-        /* Glitch Animation */
-        .glitch-title {
-            font-size: 3.5rem;
-            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            position: relative;
-            letter-spacing: 0.2em;
-            animation: glitch-skew 1s infinite linear alternate-reverse;
         }
 
-        .glitch-title::before, .glitch-title::after {
-            content: "SINGULARITY";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
-
-        .glitch-title::before {
-            left: 2px;
-            text-shadow: -2px 0 var(--glitch-cyan);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-
-        .glitch-title::after {
-            left: -2px;
-            text-shadow: -2px 0 var(--glitch-mag);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim {
-            0% { clip: rect(10px, 9999px, 20px, 0); }
-            20% { clip: rect(30px, 9999px, 40px, 0); }
-            100% { clip: rect(80px, 9999px, 90px, 0); }
-        }
-
-        @keyframes glitch-anim2 {
-            0% { clip: rect(60px, 9999px, 70px, 0); }
-            100% { clip: rect(10px, 9999px, 30px, 0); }
-        }
-
-        .status-box {
-            background: #111;
-            padding: 15px;
-            margin: 25px 0;
-            border-left: 3px solid var(--terminal-green);
-            font-size: 0.9rem;
-            text-align: left;
-            color: #8b949e;
-        }
-
-        .btn {
-            display: inline-block;
+        .archive-list {
+            list-style: none;
+            padding: 0;
             margin-top: 30px;
-            padding: 12px 40px;
-            border: 1px solid var(--terminal-green);
-            color: var(--terminal-green);
+        }
+
+        .archive-item {
+            margin-bottom: 15px;
+            border-bottom: 1px style solid rgba(0, 255, 65, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .archive-link {
+            color: var(--neon-green);
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: bold;
-            transition: 0.4s;
+            display: flex;
+            justify-content: space-between;
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            background: var(--terminal-green);
+        .archive-link:hover {
+            background: var(--neon-green);
             color: #000;
-            box-shadow: 0 0 40px var(--terminal-green);
-            cursor: pointer;
+            padding-left: 10px;
         }
 
-        .footer-info {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            left: 0;
-            font-size: 10px;
-            opacity: 0.4;
+        .status-bar {
+            font-size: 0.8rem;
+            margin-top: 30px;
+            color: #555;
+            border-top: 1px solid #333;
+            padding-top: 10px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div style="font-size: 10px; text-align: left; margin-bottom: 10px;">[BOOTING_SEQUENCE_SUCCESSFUL]</div>
-    
-    <h1 class="glitch-title">SINGULARITY</h1>
-    <p style="color: #58a6ff; letter-spacing: 2px;">THE RUINS OF GHOSTING</p>
+<div class="terminal-window">
+    <div style="font-size: 10px; opacity: 0.5;">ARCHIVE ACCESS: GRANTED</div>
+    <h1 class="glitch">THE SINGULARITY</h1>
+    <p style="text-align: center; color: #888; font-size: 0.9rem;">Interactive Dystopia Log // Subject: David Keller</p>
 
-    <div class="status-box">
-        >> SYSTEM_LOG: Visual debris levels at 87%...<br>
-        >> WARNING: The Null Authority is tracing IP...<br>
-        >> DATA: A bilingual sci-fi odyssey in a post-computational world.
+    <ul class="archive-list">
+        <li class="archive-item">
+            <a href="chapter-1.html" class="archive-link">
+                <span>> CHAPTER_01: RUINS OF DOUBLE VISION</span>
+                <span>[OPEN]</span>
+            </a>
+        </li>
+        <li class="archive-item" style="opacity: 0.3;">
+            <a href="#" class="archive-link" style="pointer-events: none;">
+                <span>> CHAPTER_02: THE NULL AUTHORITY</span>
+                <span>[LOCKED]</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="status-bar">
+        SYSTEM STATUS: ONLINE<br>
+        VISUAL DEBRIS LEVEL: 87%<br>
+        ENCRYPTION: ACTIVE
     </div>
-
-    <a href="en/chapter-1.html" class="btn">INITIALIZE: CHAPTER 01</a>
-
-    <div class="footer-info">SECURED BY THE CIPHER BUREAU // © 2026 DAVID KELLER ARCHIVE</div>
 </div>
 
 </body>
